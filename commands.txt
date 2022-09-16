@@ -1,0 +1,18 @@
+docker-compose build
+
+docker-compose up
+
+http://localhost:53395/swagger/index.html
+
+kubectl apply -f namespace-k8s.yml
+
+kubectl apply -f deploy.yml
+
+
+kubectl get all -n micro6
+
+kubectl port-forward service/microservices6 30005:80 -n micro6
+
+http://localhost:30005/swagger/index.html
+
+kubectl delete namespace micro6
